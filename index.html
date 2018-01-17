@@ -17,7 +17,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create
 function preload() {
     game.load.image('sky', 'assets/background.jpg');
     game.load.image('ground', 'assets/platform.png');
-    game.load.image('star', 'assets/star.png');
+    game.load.image('star', 'assets/coin.png');
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
 }
 var player;
@@ -65,7 +65,7 @@ function create() {
     for (var i = 0; i < 12; i++)
     {
         //  Create a star inside of the 'stars' group
-        var star = stars.create(i * 70, 0, 'star');
+        var star = stars.create(i * 216, 0, 'star');
         //  Let gravity do its thing
         star.body.gravity.y = 300;
         //  This just gives each star a slightly random bounce value
