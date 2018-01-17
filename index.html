@@ -65,7 +65,7 @@ function create() {
     for (var i = 0; i < 12; i++)
     {
         //  Create a star inside of the 'stars' group
-        var star = coin.create(i * 216, 216, 'star');
+        var star = stars.create(i * 216, 216, 'star');
         //  Let gravity do its thing
         star.body.gravity.y = 300;
         //  This just gives each star a slightly random bounce value
