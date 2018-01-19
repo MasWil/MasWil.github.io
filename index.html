@@ -58,7 +58,6 @@ function create() {
     player.animations.add('left', [0, 1], 10, true);
     player.animations.add('right', [2, 3,], 10, true);
     //  Finally some stars to collect
-	game.physics.arcade.enable(stars);
     stars = game.add.group();
     //  We will enable physics for any star that is created in this group
     stars.enableBody = true;
