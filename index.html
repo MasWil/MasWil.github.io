@@ -44,7 +44,7 @@ function create() {
     //  Now let's create two ledges
 	  var border = platforms.create(100, game.world.height - 0, 'ground');
 	border.body.immovable = true;
-
+border.scale.setTo(2, 2);
     var ledge = platforms.create(-100, 300, 'ground');
     ledge.body.immovable = true;
 	
