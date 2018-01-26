@@ -115,10 +115,11 @@ function update() {
 function collectStar (star, star) {
     
     // Removes the star from the screen
-    
+    if (game.physics.arcade.collide(stars, stars)){
     //  Add and update the score
     score += 10;
     scoreText.text = 'Score: ' + score;
+    }
 }
 </script>
 
