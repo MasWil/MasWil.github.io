@@ -75,8 +75,16 @@ function create() {
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
+	game.inpur.onDown.add(goFull,this);
     
 }
+	function goFull() {
+		if (game.scale.isFullScreen)
+	}
+	else {
+		game.scale.startFullScreen(false);
+	}
+	}
 function update() {
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
