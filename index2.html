@@ -75,6 +75,8 @@ function create() {
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
+	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+
 	game.inpur.onDown.add(goFull,this);
     
 }
