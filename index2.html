@@ -28,6 +28,21 @@ var score = 0;
 var scoreText;
 function create() {
     //  We're going to be using physics, so enable the Arcade Physics system
+	    bg = game.add.tileSprite(0, 0, 800, 600, 'background');
+    bg.fixedToCamera = true;
+
+    map = game.add.tilemap('level1');
+
+    map.addTilesetImage('tiles-1');
+
+    map.setCollisionByExclusion([ 13, 14, 15, 16, 46, 47, 48, 49, 50, 51 ]);
+
+    layer = map.createLayer('Tile Layer 1');
+
+    //  Un-comment this on to see the collision tiles
+    // layer.debug = true;
+
+    layer.resizeWorld();
     game.physics.startSystem(Phaser.Physics.ARCADE);
     //  A simple background for our game
     game.add.sprite(0, 0, 'sky');
@@ -75,18 +90,7 @@ function create() {
     scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
-	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 
-	game.inpur.onDown.add(goFull,this);
-    
-}
-	function goFull() {
-		if (game.scale.isFullScreen)
-	}
-	else {
-		game.scale.startFullScreen(false);
-	}
-	}
 function update() {
     //  Collide the player and the stars with the platforms
     game.physics.arcade.collide(player, platforms);
